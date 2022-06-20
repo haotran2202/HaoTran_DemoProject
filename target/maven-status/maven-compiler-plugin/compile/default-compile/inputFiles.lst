@@ -1,0 +1,11 @@
+/Users/haotran/HaoTran/Automation/HaoTran/src/main/java/commons/BaseTest.java
+/Users/haotran/HaoTran/Automation/HaoTran/src/main/java/commons/GlobalConstants.java
+/Users/haotran/HaoTran/Automation/HaoTran/src/main/java/pageUIs/DemoProject/LoginPageUI.java
+/Users/haotran/HaoTran/Automation/HaoTran/src/main/java/pageObjects/DemoProject/LoginPageObject.java
+/Users/haotran/HaoTran/Automation/HaoTran/src/main/java/commons/Browser.java
+/Users/haotran/HaoTran/Automation/HaoTran/src/main/java/pageUIs/DemoProject/HomePageUI.java
+/Users/haotran/HaoTran/Automation/HaoTran/src/main/java/pageObjects/DemoProject/HomePageObject.java
+/Users/haotran/HaoTran/Automation/HaoTran/src/main/java/commons/BasePage.java
+/Users/haotran/HaoTran/Automation/HaoTran/src/main/java/pageObjects/DemoProject/CreateAnAccountPageObject.java
+/Users/haotran/HaoTran/Automation/HaoTran/src/main/java/pageUIs/DemoProject/CreateAnAccountPageUI.java
+/Users/haotran/HaoTran/Automation/HaoTran/src/main/java/pageObjects/DemoProject/PageGeneratorManager.java
