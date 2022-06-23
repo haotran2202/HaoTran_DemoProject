@@ -1,6 +1,7 @@
 package DemoProject.Register;
 
 import commons.BaseTest;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -22,7 +23,8 @@ public class TS_01_CreateNewAccount extends BaseTest {
     @Parameters({"browser" , "appUrl"})
     @BeforeClass
     public void beforeClass(String browserName, String appUrl) {
-        firstName = "Firt";
+        WebDriverManager.chromedriver().setup();
+        firstName = "First";
         middleName = "Middle";
         lastName = "Last";
         email = "testing" + randomNumber() + "@gmail.com";

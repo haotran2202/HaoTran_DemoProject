@@ -6,7 +6,7 @@
     	<test name="Run on Chrome">
     		<parameter name="browser" value="chrome" />
     		<classes>
-    			 <class name="DemoProject.Register.TS_01_CreateNewAccount" />
+    			 <class name="DemoProject.Register.TS_03_AddProductToCart" />
     		</classes>
     	</test>
 
