@@ -16,9 +16,4 @@ public class AccountDashboardPageObject extends BasePage {
         return isElementDisplayed(driver,AccountDashboardPageUI.DASHBOARD_TITLE);
     }
 
-    public MobilePageObject clickToMobileTab() {
-        waitAllElementVisible(driver, AccountDashboardPageUI.MOBILE_TAB);
-        clickToElement(driver, AccountDashboardPageUI.MOBILE_TAB);
-        return PageGeneratorManager.getMobilePage(driver);
-    }
 }

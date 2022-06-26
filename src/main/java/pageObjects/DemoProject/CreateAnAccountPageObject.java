@@ -1,6 +1,7 @@
 package pageObjects.DemoProject;
 
 import commons.BasePage;
+import commons.BasePageUI;
 import org.openqa.selenium.WebDriver;
 import pageUIs.DemoProject.CreateAnAccountPageUI;
 
@@ -10,34 +11,9 @@ public class CreateAnAccountPageObject extends BasePage {
         this.driver=driver;
     }
 
-    public void inputToFirstNameTextBox(String firstname) {
-        waitAllElementVisible(driver, CreateAnAccountPageUI.FIRST_NAME_TEXTBOX);
-        sendKeyToElement(driver, CreateAnAccountPageUI.FIRST_NAME_TEXTBOX, firstname);
-    }
-
-    public void inputToMiddleNameTextBox(String middlename) {
-        waitAllElementVisible(driver, CreateAnAccountPageUI.MIDDLE_NAME_TEXTBOX);
-        sendKeyToElement(driver, CreateAnAccountPageUI.MIDDLE_NAME_TEXTBOX, middlename);
-    }
-
-    public void inputToLastNameTextBox(String lastname) {
-        waitAllElementVisible(driver, CreateAnAccountPageUI.LAST_NAME_TEXTBOX);
-        sendKeyToElement(driver, CreateAnAccountPageUI.LAST_NAME_TEXTBOX, lastname);
-    }
-
-    public void inputToEmailTextBox(String email) {
-        waitAllElementVisible(driver, CreateAnAccountPageUI.EMAIL_TEXTBOX);
-        sendKeyToElement(driver, CreateAnAccountPageUI.EMAIL_TEXTBOX, email);
-    }
-
-    public void inputToPasswordTextBox(String password) {
-        waitAllElementVisible(driver, CreateAnAccountPageUI.PASSWORD_TEXTBOX);
-        sendKeyToElement(driver, CreateAnAccountPageUI.PASSWORD_TEXTBOX, password);
-    }
-
-    public void inputToConfirmPasswordTextBox(String confirmpassword) {
-        waitAllElementVisible(driver, CreateAnAccountPageUI.CONFIRM_PASSWORD_TEXTBOX);
-        sendKeyToElement(driver, CreateAnAccountPageUI.CONFIRM_PASSWORD_TEXTBOX, confirmpassword);
+    public void inputToDynamicTextbox(String id, String value){
+        waitElementVisible(driver, BasePageUI.DYNAMIC_TEXTBOX, id);
+        sendKeyToElement(driver, BasePageUI.DYNAMIC_TEXTBOX,value,id);
     }
 
     public void clickToRegisterButton() {

@@ -38,12 +38,12 @@ public class TS_01_CreateNewAccount extends BaseTest {
     @Test
     public void TC_01_Create_New_Account() {
         createAnAccountPage = loginPage.clickToCreateAnAccountButton();
-        createAnAccountPage.inputToFirstNameTextBox(firstName);
-        createAnAccountPage.inputToMiddleNameTextBox(middleName);
-        createAnAccountPage.inputToLastNameTextBox(lastName);
-        createAnAccountPage.inputToEmailTextBox(email);
-        createAnAccountPage.inputToPasswordTextBox(password);
-        createAnAccountPage.inputToConfirmPasswordTextBox(confirmPassword);
+        createAnAccountPage.inputToDynamicTextbox("firstname",firstName);
+        createAnAccountPage.inputToDynamicTextbox("firstname", middleName);
+        createAnAccountPage.inputToDynamicTextbox("lastname",lastName);
+        createAnAccountPage.inputToDynamicTextbox("email_address",email);
+        createAnAccountPage.inputToDynamicTextbox("password",password);
+        createAnAccountPage.inputToDynamicTextbox("confirmation",confirmPassword);
         createAnAccountPage.clickToRegisterButton();
         Assert.assertTrue(createAnAccountPage.isSuccessMessageDisplayed());
     }
@@ -52,7 +52,7 @@ public class TS_01_CreateNewAccount extends BaseTest {
 
     @AfterClass
     public void afterClass() {
-        driver.quit();
+        closeBrowserAndDriver();
     }
 
 

@@ -1,6 +1,7 @@
 package DemoProject.Register;
 
 import commons.BaseTest;
+import commons.GlobalConstants;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -14,7 +15,6 @@ import pageObjects.DemoProject.LoginPageObject;
 
 public class TS_02_Login extends BaseTest {
     WebDriver driver;
-    String email, password;
     HomePageObject homePage;
     LoginPageObject loginPage;
     AccountDashboardPageObject accountDashboardPage;
@@ -22,8 +22,6 @@ public class TS_02_Login extends BaseTest {
     @Parameters({"browser" , "appUrl"})
     @BeforeClass
     public void beforeClass(String browserName, String appUrl) {
-        email = "test2211@gmail.com";
-        password = "123456";
         driver = getBrowserDriver(browserName, appUrl);
         homePage = pageObjects.DemoProject.PageGeneratorManager.getHomePage(driver);
         loginPage = homePage.clickToMyAccountLink();
@@ -31,17 +29,15 @@ public class TS_02_Login extends BaseTest {
 
     @Test
     public void TC_01_Login() {
-        loginPage.inputToEmailTextBox(email);
-        loginPage.inputToPasswordTextBox(password);
+        loginPage.inputToDynamicTextbox("email", GlobalConstants.USERNAME);
+        loginPage.inputToDynamicTextbox("pass",GlobalConstants.PASSWORD);
         accountDashboardPage = loginPage.clickToLoginButton();
         Assert.assertTrue(accountDashboardPage.isDashboardTitleDisplayed());
     }
 
-
-
     @AfterClass
     public void afterClass() {
-        driver.quit();
+        closeBrowserAndDriver();
     }
 
 

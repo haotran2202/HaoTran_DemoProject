@@ -27,15 +27,15 @@ public class TS_03_AddProductToCart extends BaseTest {
         driver = getBrowserDriver(browserName, appUrl);
         homePage = pageObjects.DemoProject.PageGeneratorManager.getHomePage(driver);
         loginPage = homePage.clickToMyAccountLink();
-        loginPage.inputToEmailTextBox(email);
-        loginPage.inputToPasswordTextBox(password);
+        loginPage.inputToDynamicTextbox("email",email);
+        loginPage.inputToDynamicTextbox("pass",password);
         accountDashboardPage = loginPage.clickToLoginButton();
         Assert.assertTrue(accountDashboardPage.isDashboardTitleDisplayed());
     }
 
     @Test
     public void TC_01_Add_Product_To_Cart() {
-        mobilePage = accountDashboardPage.clickToMobileTab();
+        mobilePage = (MobilePageObject) accountDashboardPage.openDynamicTab(driver, "Mobile");
         shoppingCartPage = mobilePage.clickToAddToCartButtonOfIPhone();
         Assert.assertTrue(shoppingCartPage.isIPhoneProductDisplayed());
         mobilePage = shoppingCartPage.clickToContinueShoppingLink();
@@ -50,7 +50,7 @@ public class TS_03_AddProductToCart extends BaseTest {
 
     @AfterClass
     public void afterClass() {
-        driver.quit();
+        closeBrowserAndDriver();
     }
 
 

@@ -27,4 +27,8 @@ public class PageGeneratorManager {
     public static ShoppingCartPageObject getShoppingCartPage(WebDriver driver){
         return new ShoppingCartPageObject(driver);
     }
+
+    public static TVPageObject getTVPage(WebDriver driver){
+        return new TVPageObject(driver);
+    }
 }

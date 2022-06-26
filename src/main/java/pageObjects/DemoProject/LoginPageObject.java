@@ -1,6 +1,7 @@
 package pageObjects.DemoProject;
 
 import commons.BasePage;
+import commons.BasePageUI;
 import org.openqa.selenium.WebDriver;
 import pageUIs.DemoProject.LoginPageUI;
 
@@ -16,14 +17,9 @@ public class LoginPageObject extends BasePage {
         return PageGeneratorManager.getCreateNewAccountPage(driver);
     }
 
-    public void inputToEmailTextBox(String email) {
-        waitElementVisible(driver, LoginPageUI.EMAIL_TEXTBOX);
-        sendKeyToElement(driver, LoginPageUI.EMAIL_TEXTBOX, email);
-    }
-
-    public void inputToPasswordTextBox(String password) {
-        waitElementVisible(driver, LoginPageUI.PASSWORD_TEXTBOX);
-        sendKeyToElement(driver, LoginPageUI.PASSWORD_TEXTBOX, password);
+    public void inputToDynamicTextbox(String id, String value){
+        waitElementVisible(driver, BasePageUI.DYNAMIC_TEXTBOX, id);
+        sendKeyToElement(driver, BasePageUI.DYNAMIC_TEXTBOX,value,id);
     }
 
     public AccountDashboardPageObject clickToLoginButton() {
