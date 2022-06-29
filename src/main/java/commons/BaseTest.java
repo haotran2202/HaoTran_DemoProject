@@ -14,6 +14,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.testng.Assert;
+import org.testng.Reporter;
 
 public abstract class BaseTest {
     protected static ThreadLocal<WebDriver> threadLocalDriver = new ThreadLocal<WebDriver>();
@@ -26,21 +28,6 @@ public abstract class BaseTest {
 
     protected WebDriver getBrowserDriver(String browserName, String appUrl) {
         Browser browser = Browser.valueOf(browserName.toUpperCase());
-
-//        switch (browser){
-//            case CHROME:
-//                WebDriverManager.chromedriver().create();
-//
-//                break;
-//            case CHROME_HEADLESS:
-//                WebDriverManager.chromedriver().create();
-//                ChromeOptions options = new ChromeOptions();
-//                options.addArguments("headless");
-//                options.addArguments("window-size=1920x1080");
-//                break;
-//            default:
-//                throw new RuntimeException("Browser name is not valid");
-//        }
 
         if (browser == Browser.CHROME) {
             WebDriverManager.chromedriver().setup();
@@ -67,9 +54,7 @@ public abstract class BaseTest {
         else {
             throw new RuntimeException("Please input your browser name!");
         }
-        System.out.println("Driver at Abstract test=" + getDriver().toString());
         getDriver().manage().timeouts().implicitlyWait(GlobalConstants.LONG_TIMEOUT, TimeUnit.SECONDS);
-        getDriver().manage().window().maximize();
         getDriver().get(appUrl);
         return getDriver();
     }
@@ -127,12 +112,14 @@ public abstract class BaseTest {
             try {
                 Process process = Runtime.getRuntime().exec(cmd);
                 process.waitFor();
+                log.info("---------- QUIT BROWSER SUCCESS ----------");
             } catch (IOException e) {
                 e.printStackTrace();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
+        threadLocalDriver.remove();
     }
 
     public WebDriver getDriver() {
@@ -142,6 +129,69 @@ public abstract class BaseTest {
         private void setDriver(WebDriver driver) {
         threadLocalDriver.set(driver);
     }
+
+    private boolean checkTrue(boolean condition) {
+        boolean pass = true;
+        try {
+            if (condition == true) {
+                log.info(" -------------------------- PASSED -------------------------- ");
+            } else {
+                log.info(" -------------------------- FAILED -------------------------- ");
+            }
+            Assert.assertTrue(condition);
+        } catch (Throwable e) {
+            pass = false;
+
+            // Add lỗi vào ReportNG
+            VerificationFailures.getFailures().addFailureForTest(Reporter.getCurrentTestResult(), e);
+            Reporter.getCurrentTestResult().setThrowable(e);
+        }
+        return pass;
+    }
+
+    protected boolean verifyTrue(boolean condition) {
+        return checkTrue(condition);
+    }
+
+    private boolean checkFailed(boolean condition) {
+        boolean pass = true;
+        try {
+            if (condition == false) {
+                log.info(" -------------------------- PASSED -------------------------- ");
+            } else {
+                log.info(" -------------------------- FAILED -------------------------- ");
+            }
+            Assert.assertFalse(condition);
+        } catch (Throwable e) {
+            pass = false;
+            VerificationFailures.getFailures().addFailureForTest(Reporter.getCurrentTestResult(), e);
+            Reporter.getCurrentTestResult().setThrowable(e);
+        }
+        return pass;
+    }
+
+    protected boolean verifyFalse(boolean condition) {
+        return checkFailed(condition);
+    }
+
+    private boolean checkEquals(Object actual, Object expected) {
+        boolean pass = true;
+        try {
+            Assert.assertEquals(actual, expected);
+            log.info(" -------------------------- PASSED -------------------------- ");
+        } catch (Throwable e) {
+            pass = false;
+            log.info(" -------------------------- FAILED -------------------------- ");
+            VerificationFailures.getFailures().addFailureForTest(Reporter.getCurrentTestResult(), e);
+            Reporter.getCurrentTestResult().setThrowable(e);
+        }
+        return pass;
+    }
+
+    protected boolean verifyEquals(Object actual, Object expected) {
+        return checkEquals(actual, expected);
+    }
+
 
     protected int randomNumber() {
         Random rand = new Random();

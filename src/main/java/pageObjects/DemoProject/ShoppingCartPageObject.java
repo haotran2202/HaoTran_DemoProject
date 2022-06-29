@@ -35,4 +35,14 @@ public class ShoppingCartPageObject extends BasePage {
     public boolean isSonyProductDisplayed() {
         return isElementDisplayed(driver, ShoppingCartPageUI.SONY_PRODUCT);
     }
+
+    public void clickToEmptyCartLink() {
+        waitAllElementVisible(driver, ShoppingCartPageUI.EMPTY_CART_LINK);
+        clickToElement(driver, ShoppingCartPageUI.EMPTY_CART_LINK);
+    }
+
+    public String getTextNoItemMessage(){
+        waitAllElementVisible(driver, ShoppingCartPageUI.NO_ITEM_MESSAGE);
+        return getElementText(driver, ShoppingCartPageUI.NO_ITEM_MESSAGE);
+    }
 }

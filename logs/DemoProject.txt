@@ -1,0 +1,40 @@
+[INFO ] [2022-06-29 16:24:47,643] Pre-Condition - STEP 01: Open browser chrome and navigate to http://live.techpanda.org/index.php/
+[INFO ] [2022-06-29 16:24:47,891] Pre-Condition - STEP 1: Open browser firefox and navigate to http://live.techpanda.org/index.php/
+[INFO ] [2022-06-29 16:25:03,859] Pre-Condition - STEP 2: Click to 'My Account' link
+[INFO ] [2022-06-29 16:25:05,183] TC_01 - STEP 1: Click to 'Create An Account' button
+[INFO ] [2022-06-29 16:25:05,539] Pre-Condition - STEP 2: Click to 'My Account' link
+[INFO ] [2022-06-29 16:25:05,767] TC_01 - STEP 2: Input to First Name textbox with value: First
+[INFO ] [2022-06-29 16:25:05,801] TC_01 - STEP 3: Input to Middle Name textbox with value: Middle
+[INFO ] [2022-06-29 16:25:05,830] TC_01 - STEP 4: Input to Last Name textbox with value: Middle
+[INFO ] [2022-06-29 16:25:05,853] TC_01 - STEP 5: Input to Email textbox with value: testing442879@gmail.com
+[INFO ] [2022-06-29 16:25:05,879] TC_01 - STEP 6: Input to Password textbox with value: 123456
+[INFO ] [2022-06-29 16:25:05,916] TC_01 - STEP 7: Input to Confirm Password textbox with value: 123456
+[INFO ] [2022-06-29 16:25:05,954] TC_01 - STEP 8: Click to 'Register' button
+[INFO ] [2022-06-29 16:25:06,651] Pre-Condition - STEP 3: Input to Email textbox with value: test2211@gmail.com
+[INFO ] [2022-06-29 16:25:07,336] TC_01 - STEP 9: Verify Success message is displayed
+[INFO ] [2022-06-29 16:25:07,373]  -------------------------- PASSED -------------------------- 
+[INFO ] [2022-06-29 16:25:07,433] OS name = mac os x
+[INFO ] [2022-06-29 16:25:07,433] Driver instance name = firefoxdriver: firefox on mac (43ef6878-11a9-4f0b-afc5-4f997d0f4b96)
+[INFO ] [2022-06-29 16:25:07,701] Pre-Condition - STEP 4: Input to Password textbox with value: 123456
+[INFO ] [2022-06-29 16:25:07,795] Pre-Condition - STEP 5: Click to 'Login' button
+[INFO ] [2022-06-29 16:25:07,860] ---------- QUIT BROWSER SUCCESS ----------
+[INFO ] [2022-06-29 16:25:09,441] Pre-Condition - STEP 6: Verify Dashboard title is displayed
+[INFO ] [2022-06-29 16:25:10,167]  -------------------------- PASSED -------------------------- 
+[INFO ] [2022-06-29 16:25:10,169] TC_01 - STEP 1: Click to 'Mobile' tab
+[INFO ] [2022-06-29 16:25:11,820] TC_01 - STEP 2: Click to 'Add To Card' button of Iphone product
+[INFO ] [2022-06-29 16:25:12,763] TC_01 - STEP 3: Verify Iphone product is displayed
+[INFO ] [2022-06-29 16:25:13,190]  -------------------------- PASSED -------------------------- 
+[INFO ] [2022-06-29 16:25:13,190] TC_01 - STEP 4: Click to 'Continue Shopping' link
+[INFO ] [2022-06-29 16:25:14,346] TC_01 - STEP 5: Click to 'Add To Card' button of Samsung product
+[INFO ] [2022-06-29 16:25:15,356] TC_01 - STEP 6: Verify Samsung product is displayed
+[INFO ] [2022-06-29 16:25:16,258]  -------------------------- PASSED -------------------------- 
+[INFO ] [2022-06-29 16:25:16,258] TC_01 - STEP 7: Click to 'Continue Shopping' link
+[INFO ] [2022-06-29 16:25:17,405] TC_01 - STEP 8: Click to 'Add To Card' button of Sony Xperia product
+[INFO ] [2022-06-29 16:25:18,472] TC_01 - STEP 9: Verify Sony Xperia product is displayed
+[INFO ] [2022-06-29 16:25:19,041]  -------------------------- PASSED -------------------------- 
+[INFO ] [2022-06-29 16:25:19,041] TC_01 - STEP 10: Click to 'Empty Cart' link
+[INFO ] [2022-06-29 16:25:20,492] TC_01 - STEP 10: Verify 'no items...' message is displayed
+[INFO ] [2022-06-29 16:25:20,557]  -------------------------- PASSED -------------------------- 
+[INFO ] [2022-06-29 16:25:20,558] OS name = mac os x
+[INFO ] [2022-06-29 16:25:20,558] Driver instance name = chromedriver: chrome on mac (c5c48e157cde3fd6a98dd9075cf86729)
+[INFO ] [2022-06-29 16:25:20,953] ---------- QUIT BROWSER SUCCESS ----------

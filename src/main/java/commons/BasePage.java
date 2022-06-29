@@ -21,8 +21,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pageObjects.DemoProject.PageGeneratorManager;
-import pageObjects.DemoProject.TVPageObject;
-
 
 public abstract class BasePage {
 
@@ -128,7 +126,7 @@ public abstract class BasePage {
 
     private By getByLocator(String locatorType){
         By by = null;
-        System.out.println("Locator type =" + locatorType);
+//        System.out.println("Locator type =" + locatorType);
         if (locatorType.startsWith("id=")||locatorType.startsWith("Id=")||locatorType.startsWith("ID=")){
             by = By.id(locatorType.substring(3));
         } else if (locatorType.startsWith("class=")||locatorType.startsWith("Class=")||locatorType.startsWith("CLASS=")){
@@ -295,8 +293,12 @@ public abstract class BasePage {
     }
 
     protected void waitElementVisible(WebDriver driver, String xpathValue) {
-        explicitWait = new WebDriverWait(driver, longTimeout);
-        explicitWait.until(ExpectedConditions.visibilityOfElementLocated(byXpath(xpathValue)));
+        try {
+            explicitWait = new WebDriverWait(driver, longTimeout);
+            explicitWait.until(ExpectedConditions.visibilityOfElementLocated(byXpath(xpathValue)));
+        } catch (Exception e) {
+            log.debug("Wait for element visible with error: " + e.getMessage());
+        }
     }
 
     protected void waitAllElementVisible(WebDriver driver, String xpathValue) {
@@ -311,7 +313,9 @@ public abstract class BasePage {
 
     protected void waitElementInvisible(WebDriver driver, String xpathValue) {
         explicitWait = new WebDriverWait(driver, longTimeout);
+        overrideImplicitTimeOut(driver, shortTimeout);
         explicitWait.until(ExpectedConditions.invisibilityOfElementLocated(byXpath(xpathValue)));
+        overrideImplicitTimeOut(driver, longTimeout);
     }
 
     protected By byXpath(String xpathValue) {
@@ -323,7 +327,7 @@ public abstract class BasePage {
             explicitWait = new WebDriverWait(driver, longTimeout);
             explicitWait.until(ExpectedConditions.elementToBeClickable(element));
         } catch (Exception e) {
-            log.debug(e.getMessage());
+            log.debug("Wait for element clickable with error: " + e.getMessage());
         }
     }
 
@@ -332,7 +336,7 @@ public abstract class BasePage {
             explicitWait = new WebDriverWait(driver, longTimeout);
             explicitWait.until(ExpectedConditions.elementToBeClickable(byXpath(xpathValue)));
         } catch (Exception e) {
-            log.debug(e.getMessage());
+            log.debug("Wait for element clickable with error: " + e.getMessage());
         }
     }
 
@@ -353,8 +357,12 @@ public abstract class BasePage {
     }
 
     protected void waitElementVisible(WebDriver driver, WebElement element) {
-        explicitWait = new WebDriverWait(driver, longTimeout);
-        explicitWait.until(ExpectedConditions.visibilityOf(element));
+        try {
+            explicitWait = new WebDriverWait(driver, longTimeout);
+            explicitWait.until(ExpectedConditions.visibilityOf(element));
+        } catch (Exception e) {
+            log.debug("Wait for element visible with error: " + e.getMessage());
+        }
     }
 
     protected String getElementText(WebDriver driver, WebElement element) {
@@ -367,7 +375,13 @@ public abstract class BasePage {
     }
 
     protected boolean isElementDisplayed(WebDriver driver, WebElement element) {
-        return element.isDisplayed();
+        try {
+            return element.isDisplayed();
+        } catch (Exception e){
+            log.debug("Element is not displayed with error: " + e.getMessage());
+            return false;
+        }
+
     }
 
     protected String getDynamicLocator(String xpathValue, String... values) {
@@ -380,27 +394,43 @@ public abstract class BasePage {
     }
 
     protected void waitElementClickable(WebDriver driver, String xpathValue, String... values) {
-        explicitWait = new WebDriverWait(driver, longTimeout);
-        explicitWait.until(ExpectedConditions.elementToBeClickable(byXpath(getDynamicLocator(xpathValue, values))));
+        try {
+            explicitWait = new WebDriverWait(driver, longTimeout);
+            explicitWait.until(ExpectedConditions.elementToBeClickable(byXpath(getDynamicLocator(xpathValue, values))));
+        } catch (Exception e) {
+            log.debug("Wait for element clickable with error: " + e.getMessage());
+        }
+
     }
 
     protected void waitElementVisible(WebDriver driver, String xpathValue, String... values) {
+        try {
         explicitWait = new WebDriverWait(driver, longTimeout);
         explicitWait
                 .until(ExpectedConditions.visibilityOfElementLocated(byXpath(getDynamicLocator(xpathValue, values))));
+        } catch (Exception e) {
+            log.debug("Wait for element visible with error: " + e.getMessage());
+        }
     }
 
     protected boolean isElementDisplayed(WebDriver driver, String xpathValue, String... values) {
-        return find(driver, getDynamicLocator(xpathValue, values)).isDisplayed();
+        try {
+            return find(driver, getDynamicLocator(xpathValue, values)).isDisplayed();
+        } catch (Exception e){
+            log.debug("Element is not displayed with error: " + e.getMessage());
+            return false;
+        }
     }
 
     protected boolean isElementDisplayed(WebDriver driver, String locator) {
         try {
             return getWebElement(driver, locator).isDisplayed();
         } catch (NoSuchElementException ex) {
+            log.debug("Element is not displayed with error: " + ex.getMessage());
             return false;
         }
         catch (StaleElementReferenceException ex) {
+            log.debug("Element is not displayed with error: " + ex.getMessage());
             return false;
         }
     }
