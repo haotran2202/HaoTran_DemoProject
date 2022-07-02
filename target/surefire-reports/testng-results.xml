@@ -1,13 +1,213 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
+    <line>
+      <![CDATA[[INFO ] [2022-06-30 15:04:25,430] Pre-Condition - STEP 1: Open browser chrome and navigate to http://live.techpanda.org/index.php/
+]]>
+    </line>
+    <line>
+      <![CDATA[[INFO ] [2022-06-30 15:04:31,556] Pre-Condition - STEP 2: Click to 'My Account' link
+]]>
+    </line>
+    <line>
+      <![CDATA[[INFO ] [2022-06-30 15:04:32,687] TC_01 - STEP 1: Click to 'Create An Account' button
+]]>
+    </line>
+    <line>
+      <![CDATA[[INFO ] [2022-06-30 15:04:33,377] TC_01 - STEP 2: Input to First Name textbox with value: First
+]]>
+    </line>
+    <line>
+      <![CDATA[[INFO ] [2022-06-30 15:04:34,209] TC_01 - STEP 3: Input to Middle Name textbox with value: Middle
+]]>
+    </line>
+    <line>
+      <![CDATA[[INFO ] [2022-06-30 15:04:34,305] TC_01 - STEP 4: Input to Last Name textbox with value: Middle
+]]>
+    </line>
+    <line>
+      <![CDATA[[INFO ] [2022-06-30 15:04:34,405] TC_01 - STEP 5: Input to Email textbox with value: testing183426@gmail.com
+]]>
+    </line>
+    <line>
+      <![CDATA[[INFO ] [2022-06-30 15:04:35,429] TC_01 - STEP 6: Input to Password textbox with value: 123456
+]]>
+    </line>
+    <line>
+      <![CDATA[[INFO ] [2022-06-30 15:04:35,528] TC_01 - STEP 7: Input to Confirm Password textbox with value: 123456
+]]>
+    </line>
+    <line>
+      <![CDATA[[INFO ] [2022-06-30 15:04:35,605] TC_01 - STEP 8: Click to 'Register' button
+]]>
+    </line>
+    <line>
+      <![CDATA[[INFO ] [2022-06-30 15:04:37,536] TC_01 - STEP 9: Verify Success message is displayed
+]]>
+    </line>
+    <line>
+      <![CDATA[[INFO ] [2022-06-30 15:04:37,586]  -------------------------- PASSED -------------------------- 
+]]>
+    </line>
+    <line>
+      <![CDATA[[INFO ] [2022-06-30 15:04:37,652] OS name = mac os x
+]]>
+    </line>
+    <line>
+      <![CDATA[[INFO ] [2022-06-30 15:04:37,652] Driver instance name = chromedriver: chrome on mac (22c0599fffd6331085068510c677e317)
+]]>
+    </line>
+    <line>
+      <![CDATA[[INFO ] [2022-06-30 15:04:38,071] ---------- QUIT BROWSER SUCCESS ----------
+]]>
+    </line>
+    <line>
+      <![CDATA[[INFO ] [2022-06-30 15:04:38,071] Pre-Condition - STEP 01: Open browser chrome and navigate to http://live.techpanda.org/index.php/
+]]>
+    </line>
+    <line>
+      <![CDATA[[INFO ] [2022-06-30 15:04:42,932] Pre-Condition - STEP 2: Click to 'My Account' link
+]]>
+    </line>
+    <line>
+      <![CDATA[[INFO ] [2022-06-30 15:04:43,881] Pre-Condition - STEP 3: Input to Email textbox with value: test2211@gmail.com
+]]>
+    </line>
+    <line>
+      <![CDATA[[INFO ] [2022-06-30 15:04:46,754] Pre-Condition - STEP 4: Input to Password textbox with value: 123456
+]]>
+    </line>
+    <line>
+      <![CDATA[[INFO ] [2022-06-30 15:04:46,849] Pre-Condition - STEP 5: Click to 'Login' button
+]]>
+    </line>
+    <line>
+      <![CDATA[[INFO ] [2022-06-30 15:04:49,022] Pre-Condition - STEP 6: Verify Dashboard title is displayed
+]]>
+    </line>
+    <line>
+      <![CDATA[[INFO ] [2022-06-30 15:04:51,749]  -------------------------- PASSED -------------------------- 
+]]>
+    </line>
+    <line>
+      <![CDATA[[INFO ] [2022-06-30 15:04:51,758] TC_01 - STEP 1: Click to 'Mobile' tab
+]]>
+    </line>
+    <line>
+      <![CDATA[[INFO ] [2022-06-30 15:04:53,337] TC_01 - STEP 2: Click to 'Add To Card' button of Iphone product
+]]>
+    </line>
+    <line>
+      <![CDATA[[INFO ] [2022-06-30 15:04:54,322] TC_01 - STEP 3: Verify Iphone product is displayed
+]]>
+    </line>
+    <line>
+      <![CDATA[[INFO ] [2022-06-30 15:04:54,828]  -------------------------- PASSED -------------------------- 
+]]>
+    </line>
+    <line>
+      <![CDATA[[INFO ] [2022-06-30 15:04:54,828] TC_01 - STEP 4: Click to 'Continue Shopping' link
+]]>
+    </line>
+    <line>
+      <![CDATA[[INFO ] [2022-06-30 15:04:58,209] TC_01 - STEP 5: Click to 'Add To Card' button of Samsung product
+]]>
+    </line>
+    <line>
+      <![CDATA[[INFO ] [2022-06-30 15:04:59,211] TC_01 - STEP 6: Verify Samsung product is displayed
+]]>
+    </line>
+    <line>
+      <![CDATA[[INFO ] [2022-06-30 15:04:59,772]  -------------------------- PASSED -------------------------- 
+]]>
+    </line>
+    <line>
+      <![CDATA[[INFO ] [2022-06-30 15:04:59,772] TC_01 - STEP 7: Click to 'Continue Shopping' link
+]]>
+    </line>
+    <line>
+      <![CDATA[[INFO ] [2022-06-30 15:05:02,970] TC_01 - STEP 8: Click to 'Add To Card' button of Sony Xperia product
+]]>
+    </line>
+    <line>
+      <![CDATA[[INFO ] [2022-06-30 15:05:03,972] TC_01 - STEP 9: Verify Sony Xperia product is displayed
+]]>
+    </line>
+    <line>
+      <![CDATA[[INFO ] [2022-06-30 15:05:04,474]  -------------------------- PASSED -------------------------- 
+]]>
+    </line>
+    <line>
+      <![CDATA[[INFO ] [2022-06-30 15:05:04,475] TC_01 - STEP 10: Click to 'Empty Cart' link
+]]>
+    </line>
+    <line>
+      <![CDATA[[INFO ] [2022-06-30 15:05:05,685] TC_01 - STEP 10: Verify 'no items...' message is displayed
+]]>
+    </line>
+    <line>
+      <![CDATA[[INFO ] [2022-06-30 15:05:05,727]  -------------------------- PASSED -------------------------- 
+]]>
+    </line>
+    <line>
+      <![CDATA[[INFO ] [2022-06-30 15:05:05,729] OS name = mac os x
+]]>
+    </line>
+    <line>
+      <![CDATA[[INFO ] [2022-06-30 15:05:05,729] Driver instance name = chromedriver: chrome on mac (fed8f1e1e0d021db251b4118923fd58c)
+]]>
+    </line>
+    <line>
+      <![CDATA[[INFO ] [2022-06-30 15:05:05,832] ---------- QUIT BROWSER SUCCESS ----------
+]]>
+    </line>
+    <line>
+      <![CDATA[[INFO ] [2022-06-30 15:05:05,832] Pre-Condition - Step 01: Open browser: chrome and navigate to http://live.techpanda.org/index.php/
+]]>
+    </line>
+    <line>
+      <![CDATA[[INFO ] [2022-06-30 15:05:10,913] Pre-Condition - STEP 02: Click to 'My Account' link
+]]>
+    </line>
+    <line>
+      <![CDATA[[INFO ] [2022-06-30 15:05:11,975] TC_01 - STEP 1: Input to Email textbox with value: test2211@gmail.com
+]]>
+    </line>
+    <line>
+      <![CDATA[[INFO ] [2022-06-30 15:05:12,828] TC_01 - STEP 2: Input to Password textbox with value: 123456
+]]>
+    </line>
+    <line>
+      <![CDATA[[INFO ] [2022-06-30 15:05:12,907] TC_01 - STEP 3: Click to 'Login' button
+]]>
+    </line>
+    <line>
+      <![CDATA[[INFO ] [2022-06-30 15:05:14,624] TC_01 - STEP 4: Verify Dashboard title is displayed
+]]>
+    </line>
+    <line>
+      <![CDATA[[INFO ] [2022-06-30 15:05:14,665]  -------------------------- PASSED -------------------------- 
+]]>
+    </line>
+    <line>
+      <![CDATA[[INFO ] [2022-06-30 15:05:14,666] OS name = mac os x
+]]>
+    </line>
+    <line>
+      <![CDATA[[INFO ] [2022-06-30 15:05:14,666] Driver instance name = chromedriver: chrome on mac (f83fc16023722724fba437679671be00)
+]]>
+    </line>
+    <line>
+      <![CDATA[[INFO ] [2022-06-30 15:05:15,089] ---------- QUIT BROWSER SUCCESS ----------
+]]>
+    </line>
   </reporter-output>
-  <suite started-at="2022-06-20T10:08:05Z" name="Register" finished-at="2022-06-20T10:08:18Z" duration-ms="13415">
+  <suite started-at="2022-06-30T08:04:25Z" name="Register" finished-at="2022-06-30T08:05:15Z" duration-ms="49916">
     <groups>
     </groups>
-    <test started-at="2022-06-20T10:08:05Z" name="Run on Chrome" finished-at="2022-06-20T10:08:18Z" duration-ms="13415">
-      <class name="DemoProject.Register.TS_01_CreateNewAccount">
-        <test-method is-config="true" signature="beforeClass(java.lang.String, java.lang.String)[pri:0, instance:DemoProject.Register.TS_01_CreateNewAccount@4c5204af]" started-at="2022-06-20T10:08:05Z" name="beforeClass" finished-at="2022-06-20T10:08:12Z" duration-ms="7689" status="PASS">
+    <test started-at="2022-06-30T08:04:25Z" name="Run on Chrome" finished-at="2022-06-30T08:05:15Z" duration-ms="49916">
+      <class name="DemoProject.AddProducts.TS_03_AddProductToCart">
+        <test-method is-config="true" signature="beforeClass(java.lang.String, java.lang.String)[pri:0, instance:DemoProject.AddProducts.TS_03_AddProductToCart@7b2a3ff8]" started-at="2022-06-30T08:04:38Z" name="beforeClass" finished-at="2022-06-30T08:04:51Z" duration-ms="13678" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -21,14 +221,266 @@
             </param>
           </params>
           <reporter-output>
+            <line>
+              <![CDATA[[INFO ] [2022-06-30 15:04:38,071] Pre-Condition - STEP 01: Open browser chrome and navigate to http://live.techpanda.org/index.php/
+]]>
+            </line>
+            <line>
+              <![CDATA[[INFO ] [2022-06-30 15:04:42,932] Pre-Condition - STEP 2: Click to 'My Account' link
+]]>
+            </line>
+            <line>
+              <![CDATA[[INFO ] [2022-06-30 15:04:43,881] Pre-Condition - STEP 3: Input to Email textbox with value: test2211@gmail.com
+]]>
+            </line>
+            <line>
+              <![CDATA[[INFO ] [2022-06-30 15:04:46,754] Pre-Condition - STEP 4: Input to Password textbox with value: 123456
+]]>
+            </line>
+            <line>
+              <![CDATA[[INFO ] [2022-06-30 15:04:46,849] Pre-Condition - STEP 5: Click to 'Login' button
+]]>
+            </line>
+            <line>
+              <![CDATA[[INFO ] [2022-06-30 15:04:49,022] Pre-Condition - STEP 6: Verify Dashboard title is displayed
+]]>
+            </line>
+            <line>
+              <![CDATA[[INFO ] [2022-06-30 15:04:51,749]  -------------------------- PASSED -------------------------- 
+]]>
+            </line>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method signature="TC_01_Create_New_Account()[pri:0, instance:DemoProject.Register.TS_01_CreateNewAccount@4c5204af]" started-at="2022-06-20T10:08:12Z" name="TC_01_Create_New_Account" finished-at="2022-06-20T10:08:18Z" duration-ms="5591" status="PASS">
+        <test-method signature="TC_01_Add_Product_To_Cart()[pri:0, instance:DemoProject.AddProducts.TS_03_AddProductToCart@7b2a3ff8]" started-at="2022-06-30T08:04:51Z" name="TC_01_Add_Product_To_Cart" finished-at="2022-06-30T08:05:05Z" duration-ms="13978" status="PASS">
           <reporter-output>
+            <line>
+              <![CDATA[[INFO ] [2022-06-30 15:04:51,758] TC_01 - STEP 1: Click to 'Mobile' tab
+]]>
+            </line>
+            <line>
+              <![CDATA[[INFO ] [2022-06-30 15:04:53,337] TC_01 - STEP 2: Click to 'Add To Card' button of Iphone product
+]]>
+            </line>
+            <line>
+              <![CDATA[[INFO ] [2022-06-30 15:04:54,322] TC_01 - STEP 3: Verify Iphone product is displayed
+]]>
+            </line>
+            <line>
+              <![CDATA[[INFO ] [2022-06-30 15:04:54,828]  -------------------------- PASSED -------------------------- 
+]]>
+            </line>
+            <line>
+              <![CDATA[[INFO ] [2022-06-30 15:04:54,828] TC_01 - STEP 4: Click to 'Continue Shopping' link
+]]>
+            </line>
+            <line>
+              <![CDATA[[INFO ] [2022-06-30 15:04:58,209] TC_01 - STEP 5: Click to 'Add To Card' button of Samsung product
+]]>
+            </line>
+            <line>
+              <![CDATA[[INFO ] [2022-06-30 15:04:59,211] TC_01 - STEP 6: Verify Samsung product is displayed
+]]>
+            </line>
+            <line>
+              <![CDATA[[INFO ] [2022-06-30 15:04:59,772]  -------------------------- PASSED -------------------------- 
+]]>
+            </line>
+            <line>
+              <![CDATA[[INFO ] [2022-06-30 15:04:59,772] TC_01 - STEP 7: Click to 'Continue Shopping' link
+]]>
+            </line>
+            <line>
+              <![CDATA[[INFO ] [2022-06-30 15:05:02,970] TC_01 - STEP 8: Click to 'Add To Card' button of Sony Xperia product
+]]>
+            </line>
+            <line>
+              <![CDATA[[INFO ] [2022-06-30 15:05:03,972] TC_01 - STEP 9: Verify Sony Xperia product is displayed
+]]>
+            </line>
+            <line>
+              <![CDATA[[INFO ] [2022-06-30 15:05:04,474]  -------------------------- PASSED -------------------------- 
+]]>
+            </line>
+            <line>
+              <![CDATA[[INFO ] [2022-06-30 15:05:04,475] TC_01 - STEP 10: Click to 'Empty Cart' link
+]]>
+            </line>
+            <line>
+              <![CDATA[[INFO ] [2022-06-30 15:05:05,685] TC_01 - STEP 10: Verify 'no items...' message is displayed
+]]>
+            </line>
+            <line>
+              <![CDATA[[INFO ] [2022-06-30 15:05:05,727]  -------------------------- PASSED -------------------------- 
+]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- TC_01_Add_Product_To_Cart -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:DemoProject.AddProducts.TS_03_AddProductToCart@7b2a3ff8]" started-at="2022-06-30T08:05:05Z" name="afterClass" finished-at="2022-06-30T08:05:05Z" duration-ms="104" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[[INFO ] [2022-06-30 15:05:05,729] OS name = mac os x
+]]>
+            </line>
+            <line>
+              <![CDATA[[INFO ] [2022-06-30 15:05:05,729] Driver instance name = chromedriver: chrome on mac (fed8f1e1e0d021db251b4118923fd58c)
+]]>
+            </line>
+            <line>
+              <![CDATA[[INFO ] [2022-06-30 15:05:05,832] ---------- QUIT BROWSER SUCCESS ----------
+]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- DemoProject.AddProducts.TS_03_AddProductToCart -->
+      <class name="DemoProject.Login.TS_02_Login">
+        <test-method is-config="true" signature="beforeClass(java.lang.String, java.lang.String)[pri:0, instance:DemoProject.Login.TS_02_Login@1bbae752]" started-at="2022-06-30T08:05:05Z" name="beforeClass" finished-at="2022-06-30T08:05:11Z" duration-ms="6141" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[http://live.techpanda.org/index.php/]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[[INFO ] [2022-06-30 15:05:05,832] Pre-Condition - Step 01: Open browser: chrome and navigate to http://live.techpanda.org/index.php/
+]]>
+            </line>
+            <line>
+              <![CDATA[[INFO ] [2022-06-30 15:05:10,913] Pre-Condition - STEP 02: Click to 'My Account' link
+]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method signature="TC_01_Login()[pri:0, instance:DemoProject.Login.TS_02_Login@1bbae752]" started-at="2022-06-30T08:05:11Z" name="TC_01_Login" finished-at="2022-06-30T08:05:14Z" duration-ms="2692" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[[INFO ] [2022-06-30 15:05:11,975] TC_01 - STEP 1: Input to Email textbox with value: test2211@gmail.com
+]]>
+            </line>
+            <line>
+              <![CDATA[[INFO ] [2022-06-30 15:05:12,828] TC_01 - STEP 2: Input to Password textbox with value: 123456
+]]>
+            </line>
+            <line>
+              <![CDATA[[INFO ] [2022-06-30 15:05:12,907] TC_01 - STEP 3: Click to 'Login' button
+]]>
+            </line>
+            <line>
+              <![CDATA[[INFO ] [2022-06-30 15:05:14,624] TC_01 - STEP 4: Verify Dashboard title is displayed
+]]>
+            </line>
+            <line>
+              <![CDATA[[INFO ] [2022-06-30 15:05:14,665]  -------------------------- PASSED -------------------------- 
+]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- TC_01_Login -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:DemoProject.Login.TS_02_Login@1bbae752]" started-at="2022-06-30T08:05:14Z" name="afterClass" finished-at="2022-06-30T08:05:15Z" duration-ms="423" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[[INFO ] [2022-06-30 15:05:14,666] OS name = mac os x
+]]>
+            </line>
+            <line>
+              <![CDATA[[INFO ] [2022-06-30 15:05:14,666] Driver instance name = chromedriver: chrome on mac (f83fc16023722724fba437679671be00)
+]]>
+            </line>
+            <line>
+              <![CDATA[[INFO ] [2022-06-30 15:05:15,089] ---------- QUIT BROWSER SUCCESS ----------
+]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- DemoProject.Login.TS_02_Login -->
+      <class name="DemoProject.Register.TS_01_CreateNewAccount">
+        <test-method is-config="true" signature="beforeClass(java.lang.String, java.lang.String)[pri:0, instance:DemoProject.Register.TS_01_CreateNewAccount@53692008]" started-at="2022-06-30T08:04:25Z" name="beforeClass" finished-at="2022-06-30T08:04:32Z" duration-ms="7341" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[http://live.techpanda.org/index.php/]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[[INFO ] [2022-06-30 15:04:25,430] Pre-Condition - STEP 1: Open browser chrome and navigate to http://live.techpanda.org/index.php/
+]]>
+            </line>
+            <line>
+              <![CDATA[[INFO ] [2022-06-30 15:04:31,556] Pre-Condition - STEP 2: Click to 'My Account' link
+]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method signature="TC_01_Create_New_Account()[pri:0, instance:DemoProject.Register.TS_01_CreateNewAccount@53692008]" started-at="2022-06-30T08:04:32Z" name="TC_01_Create_New_Account" finished-at="2022-06-30T08:04:37Z" duration-ms="5061" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[[INFO ] [2022-06-30 15:04:32,687] TC_01 - STEP 1: Click to 'Create An Account' button
+]]>
+            </line>
+            <line>
+              <![CDATA[[INFO ] [2022-06-30 15:04:33,377] TC_01 - STEP 2: Input to First Name textbox with value: First
+]]>
+            </line>
+            <line>
+              <![CDATA[[INFO ] [2022-06-30 15:04:34,209] TC_01 - STEP 3: Input to Middle Name textbox with value: Middle
+]]>
+            </line>
+            <line>
+              <![CDATA[[INFO ] [2022-06-30 15:04:34,305] TC_01 - STEP 4: Input to Last Name textbox with value: Middle
+]]>
+            </line>
+            <line>
+              <![CDATA[[INFO ] [2022-06-30 15:04:34,405] TC_01 - STEP 5: Input to Email textbox with value: testing183426@gmail.com
+]]>
+            </line>
+            <line>
+              <![CDATA[[INFO ] [2022-06-30 15:04:35,429] TC_01 - STEP 6: Input to Password textbox with value: 123456
+]]>
+            </line>
+            <line>
+              <![CDATA[[INFO ] [2022-06-30 15:04:35,528] TC_01 - STEP 7: Input to Confirm Password textbox with value: 123456
+]]>
+            </line>
+            <line>
+              <![CDATA[[INFO ] [2022-06-30 15:04:35,605] TC_01 - STEP 8: Click to 'Register' button
+]]>
+            </line>
+            <line>
+              <![CDATA[[INFO ] [2022-06-30 15:04:37,536] TC_01 - STEP 9: Verify Success message is displayed
+]]>
+            </line>
+            <line>
+              <![CDATA[[INFO ] [2022-06-30 15:04:37,586]  -------------------------- PASSED -------------------------- 
+]]>
+            </line>
           </reporter-output>
         </test-method> <!-- TC_01_Create_New_Account -->
-        <test-method is-config="true" signature="afterClass()[pri:0, instance:DemoProject.Register.TS_01_CreateNewAccount@4c5204af]" started-at="2022-06-20T10:08:18Z" name="afterClass" finished-at="2022-06-20T10:08:18Z" duration-ms="81" status="PASS">
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:DemoProject.Register.TS_01_CreateNewAccount@53692008]" started-at="2022-06-30T08:04:37Z" name="afterClass" finished-at="2022-06-30T08:04:38Z" duration-ms="419" status="PASS">
           <reporter-output>
+            <line>
+              <![CDATA[[INFO ] [2022-06-30 15:04:37,652] OS name = mac os x
+]]>
+            </line>
+            <line>
+              <![CDATA[[INFO ] [2022-06-30 15:04:37,652] Driver instance name = chromedriver: chrome on mac (22c0599fffd6331085068510c677e317)
+]]>
+            </line>
+            <line>
+              <![CDATA[[INFO ] [2022-06-30 15:04:38,071] ---------- QUIT BROWSER SUCCESS ----------
+]]>
+            </line>
           </reporter-output>
         </test-method> <!-- afterClass -->
       </class> <!-- DemoProject.Register.TS_01_CreateNewAccount -->

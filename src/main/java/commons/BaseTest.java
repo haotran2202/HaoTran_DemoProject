@@ -1,5 +1,6 @@
 package commons;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
@@ -16,6 +17,8 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.testng.Assert;
 import org.testng.Reporter;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
 
 public abstract class BaseTest {
     protected static ThreadLocal<WebDriver> threadLocalDriver = new ThreadLocal<WebDriver>();
@@ -126,8 +129,27 @@ public abstract class BaseTest {
         return threadLocalDriver.get();
     }
 
-        private void setDriver(WebDriver driver) {
+    private void setDriver(WebDriver driver) {
         threadLocalDriver.set(driver);
+    }
+
+    @BeforeSuite
+    public void deleteAllFilesInAllureFolder() {
+        log.info("---------- START delete file in folder ----------");
+        try {
+            String pathFolderDownload = System.getProperty("user.dir") + "/allure-results";
+            File file = new File(pathFolderDownload);
+            File[] listOfFiles = file.listFiles();
+            for (int i = 0; i < listOfFiles.length; i++) {
+                if (listOfFiles[i].isFile()) {
+                    System.out.println(listOfFiles[i].getName());
+                    new File(listOfFiles[i].toString()).delete();
+                }
+            }
+        } catch (Exception e) {
+            System.out.print(e.getMessage());
+        }
+        log.info("---------- END delete file in folder ----------");
     }
 
     private boolean checkTrue(boolean condition) {
@@ -191,7 +213,6 @@ public abstract class BaseTest {
     protected boolean verifyEquals(Object actual, Object expected) {
         return checkEquals(actual, expected);
     }
-
 
     protected int randomNumber() {
         Random rand = new Random();

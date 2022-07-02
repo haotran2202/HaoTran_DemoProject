@@ -2,18 +2,20 @@ package DemoProject.AddProducts;
 
 import commons.BaseTest;
 import commons.GlobalConstants;
+import io.qameta.allure.*;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import pageObjects.DemoProject.*;
 import pageUIs.DemoProject.ShoppingCartPageUI;
+import reportConfig.AllureTestListener;
 
 import java.util.Set;
 
+@Listeners({AllureTestListener.class})
+@Epic("Regression")
+@Feature("Adding")
 public class TS_03_AddProductToCart extends BaseTest {
     WebDriver driver;
     String email, password;
@@ -46,6 +48,9 @@ public class TS_03_AddProductToCart extends BaseTest {
         verifyTrue(accountDashboardPage.isDashboardTitleDisplayed());
     }
 
+    @Description("TC 01: Add product to Cart")
+    @Story("Add product to Cart")
+    @Severity(SeverityLevel.NORMAL)
     @Test
     public void TC_01_Add_Product_To_Cart() {
         log.info("TC_01 - STEP 1: Click to 'Mobile' tab");

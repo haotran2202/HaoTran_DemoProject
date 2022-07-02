@@ -2,6 +2,7 @@ package pageObjects.DemoProject;
 
 import commons.BasePage;
 import commons.BasePageUI;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import pageUIs.DemoProject.LoginPageUI;
 
@@ -11,17 +12,20 @@ public class LoginPageObject extends BasePage {
         this.driver = driver;
     }
 
+    @Step("Click to 'Create An Account' button")
     public CreateAnAccountPageObject clickToCreateAnAccountButton() {
         waitElementVisible(driver, LoginPageUI.CREATE_AN_ACCOUNT_BUTTON);
         clickToElement(driver, LoginPageUI.CREATE_AN_ACCOUNT_BUTTON);
         return PageGeneratorManager.getCreateNewAccountPage(driver);
     }
 
+    @Step("Input to {0} textbox with value: {1}")
     public void inputToDynamicTextbox(String id, String value){
         waitElementVisible(driver, BasePageUI.DYNAMIC_TEXTBOX, id);
         sendKeyToElement(driver, BasePageUI.DYNAMIC_TEXTBOX,value,id);
     }
 
+    @Step("Click to 'Login' button")
     public AccountDashboardPageObject clickToLoginButton() {
         waitElementVisible(driver, LoginPageUI.LOGIN_BUTTON);
         clickToElement(driver, LoginPageUI.LOGIN_BUTTON);

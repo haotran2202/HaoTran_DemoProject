@@ -7,6 +7,7 @@ import java.util.NoSuchElementException;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
+import io.qameta.allure.Step;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.openqa.selenium.Alert;
@@ -619,6 +620,7 @@ public abstract class BasePage {
     }
 
     // functions to open pages
+    @Step("Open {1} tab")
     public BasePage openDynamicTab(WebDriver driver, String tabName) {
         waitAllElementVisible(driver, BasePageUI.DYNAMIC_TAB, tabName);
         clickToElement(driver, BasePageUI.DYNAMIC_TAB, tabName);
@@ -632,6 +634,7 @@ public abstract class BasePage {
         }
     }
 
+    @Step("Open {1} page from Dashboard")
     public BasePage openDynamicAccountPage(WebDriver driver, String pageName) {
         waitAllElementVisible(driver, BasePageUI.DYNAMIC_ACCOUNT_PAGE, pageName);
         clickToElement(driver, BasePageUI.DYNAMIC_ACCOUNT_PAGE, pageName);
@@ -645,11 +648,11 @@ public abstract class BasePage {
         }
     }
 
+    @Step("Input to {1} textbox with value: {2}")
     public void inputToDynamicTextbox(WebDriver driver,String id, String value){
         waitElementVisible(driver, getDynamicLocator(BasePageUI.DYNAMIC_TEXTBOX, id));
         sendKeyToElement(driver,getDynamicLocator(BasePageUI.DYNAMIC_TEXTBOX),value);
     }
-
 
     protected long shortTimeout = GlobalConstants.SHORT_TIMEOUT;
     String osName = System.getProperty("os.name");

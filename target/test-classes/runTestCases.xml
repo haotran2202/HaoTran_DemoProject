@@ -4,25 +4,26 @@
     <parameter name="appUrl" value="http://live.techpanda.org/index.php/" />
 	<listeners>
 		<listener class-name = "commons.MethodListener"/>
-		<listener class-name = "org.uncommons.reportng.HTMLReporter" />
-		<listener class-name = "org.uncommons.reportng.JUnitXMLReporter" />
+<!--		<listener class-name = "org.uncommons.reportng.HTMLReporter" />-->
+<!--		<listener class-name = "org.uncommons.reportng.JUnitXMLReporter" />-->
+		<listener class-name = "reportConfig.AllureTestListener" />
 	</listeners>
 
     	<test name="Run on Chrome">
     		<parameter name="browser" value="chrome" />
     		<classes>
-<!--				<class name="DemoProject.Register.TS_01_CreateNewAccount" />-->
+				<class name="DemoProject.Register.TS_01_CreateNewAccount" />
     			 <class name="DemoProject.AddProducts.TS_03_AddProductToCart" />
-<!--				<class name="DemoProject.Login.TS_02_Login" />-->
+				<class name="DemoProject.Login.TS_02_Login" />
     		</classes>
     	</test>
 
-    <test name="Run on Firefox">
-        <parameter name="browser" value="firefox" />
-        <classes>
-            <class name="DemoProject.Register.TS_01_CreateNewAccount" />
-        </classes>
-    </test>
+<!--    <test name="Run on Firefox">-->
+<!--        <parameter name="browser" value="firefox" />-->
+<!--        <classes>-->
+<!--            <class name="DemoProject.Register.TS_01_CreateNewAccount" />-->
+<!--        </classes>-->
+<!--    </test>-->
 <!--     	<test name="Run on Edge">-->
 <!--     		<parameter name="browser" value="edge" />-->
 <!--     		<classes>-->
