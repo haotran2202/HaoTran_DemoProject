@@ -26,6 +26,7 @@
         <jackson.version>2.9.4</jackson.version>
         <webdrivermanager.version>4.4.3</webdrivermanager.version>
         <aspectj.version>1.8.10</aspectj.version>
+        <lombok.version>1.18.24</lombok.version>
     </properties>
 
     <!-- Quản lí thư viện -->
@@ -72,12 +73,6 @@
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
             <version>${jackson.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.aventstack</groupId>
-            <artifactId>extentreports</artifactId>
-            <version>4.0.9</version>
         </dependency>
 
         <dependency>
@@ -133,6 +128,14 @@
             <artifactId>aspectjweaver</artifactId>
             <version>${aspectj.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
     </dependencies>
 
     <!-- Compiler/ Run Test -->

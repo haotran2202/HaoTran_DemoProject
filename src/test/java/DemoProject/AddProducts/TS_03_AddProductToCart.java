@@ -1,5 +1,6 @@
 package DemoProject.AddProducts;
 
+import DemoProject.common.Common_01_CreateNewAccount;
 import commons.BaseTest;
 import commons.GlobalConstants;
 import io.qameta.allure.*;
@@ -35,16 +36,17 @@ public class TS_03_AddProductToCart extends BaseTest {
         log.info("Pre-Condition - STEP 2: Click to 'My Account' link");
         loginPage = homePage.clickToMyAccountLink();
 
-        log.info("Pre-Condition - STEP 3: Input to Email textbox with value: "+ GlobalConstants.USERNAME);
-        loginPage.inputToDynamicTextbox("email", GlobalConstants.USERNAME);
+        log.info("Pre-Condition - STEP 3: Input to Email textbox with value: "+ Common_01_CreateNewAccount.email);
+        loginPage.inputToTextboxByIdAttribute(driver,"email", Common_01_CreateNewAccount.email);
 
-        log.info("Pre-Condition - STEP 4: Input to Password textbox with value: "+ GlobalConstants.PASSWORD);
-        loginPage.inputToDynamicTextbox("pass",GlobalConstants.PASSWORD);
+        log.info("Pre-Condition - STEP 4: Input to Password textbox with value: "+ Common_01_CreateNewAccount.password);
+        loginPage.inputToTextboxByIdAttribute(driver, "pass",Common_01_CreateNewAccount.password);
 
         log.info("Pre-Condition - STEP 5: Click to 'Login' button");
-        accountDashboardPage = loginPage.clickToLoginButton();
+        loginPage.clickToButtonByTitle(driver, "Login");
+        accountDashboardPage = new AccountDashboardPageObject(driver);
 
-        log.info("Pre-Condition - STEP 6: Verify Dashboard title is displayed");
+                log.info("Pre-Condition - STEP 6: Verify Dashboard title is displayed");
         verifyTrue(accountDashboardPage.isDashboardTitleDisplayed());
     }
 

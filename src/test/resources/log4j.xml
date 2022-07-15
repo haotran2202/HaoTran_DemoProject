@@ -59,6 +59,14 @@
         <appender-ref ref="reportng" />
     </category>
 
+    <category name="DemoProject.common">
+        <priority value="all" />
+        <appender-ref ref="console" />
+        <appender-ref ref="logfile" />
+        <appender-ref ref="file" />
+        <appender-ref ref="reportng" />
+    </category>
+
     <category name="SauceDemoProject.Sorting">
         <priority value="all" />
         <appender-ref ref="console" />

@@ -1,5 +1,6 @@
 package DemoProject.Login;
 
+import DemoProject.common.Common_01_CreateNewAccount;
 import commons.BaseTest;
 import commons.GlobalConstants;
 import org.openqa.selenium.WebDriver;
@@ -29,16 +30,17 @@ public class TS_02_Login extends BaseTest {
 
     @Test
     public void TC_01_Login() {
-        log.info("TC_01 - STEP 1: Input to Email textbox with value: "+ GlobalConstants.USERNAME);
-        loginPage.inputToDynamicTextbox("email", GlobalConstants.USERNAME);
+        log.info("TC_01 - STEP 1: Input to Email textbox with value: "+ Common_01_CreateNewAccount.email);
+        loginPage.inputToTextboxByIdAttribute(driver,"email", Common_01_CreateNewAccount.email);
 
-        log.info("TC_01 - STEP 2: Input to Password textbox with value: "+ GlobalConstants.PASSWORD);
-        loginPage.inputToDynamicTextbox("pass",GlobalConstants.PASSWORD);
+        log.info("TC_01 - STEP 2: Input to Password textbox with value: "+ Common_01_CreateNewAccount.password);
+        loginPage.inputToTextboxByIdAttribute(driver,"pass",Common_01_CreateNewAccount.password);
 
         log.info("TC_01 - STEP 3: Click to 'Login' button");
-        accountDashboardPage = loginPage.clickToLoginButton();
+        loginPage.clickToButtonByTitle(driver, "Login");
+        accountDashboardPage = new AccountDashboardPageObject(driver);
 
-        log.info("TC_01 - STEP 4: Verify Dashboard title is displayed");
+                log.info("TC_01 - STEP 4: Verify Dashboard title is displayed");
         verifyTrue(accountDashboardPage.isDashboardTitleDisplayed());
     }
 

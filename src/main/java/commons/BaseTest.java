@@ -57,7 +57,7 @@ public abstract class BaseTest {
         else {
             throw new RuntimeException("Please input your browser name!");
         }
-        getDriver().manage().timeouts().implicitlyWait(GlobalConstants.LONG_TIMEOUT, TimeUnit.SECONDS);
+        getDriver().manage().timeouts().implicitlyWait(GlobalConstants.getGlobalConstants().getLongTimeout(), TimeUnit.SECONDS);
         getDriver().get(appUrl);
         return getDriver();
     }

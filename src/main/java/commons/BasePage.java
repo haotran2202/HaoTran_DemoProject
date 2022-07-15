@@ -636,8 +636,8 @@ public abstract class BasePage {
 
     @Step("Open {1} page from Dashboard")
     public BasePage openDynamicAccountPage(WebDriver driver, String pageName) {
-        waitAllElementVisible(driver, BasePageUI.DYNAMIC_ACCOUNT_PAGE, pageName);
-        clickToElement(driver, BasePageUI.DYNAMIC_ACCOUNT_PAGE, pageName);
+        waitAllElementVisible(driver, BasePageUI.DYNAMIC_ACCOUNT_PAGE_BY_TEXT, pageName);
+        clickToElement(driver, BasePageUI.DYNAMIC_ACCOUNT_PAGE_BY_TEXT, pageName);
         switch (pageName){
             case "Mobile":
                 return PageGeneratorManager.getMobilePage(driver);
@@ -648,15 +648,38 @@ public abstract class BasePage {
         }
     }
 
-    @Step("Input to {1} textbox with value: {2}")
-    public void inputToDynamicTextbox(WebDriver driver,String id, String value){
-        waitElementVisible(driver, getDynamicLocator(BasePageUI.DYNAMIC_TEXTBOX, id));
-        sendKeyToElement(driver,getDynamicLocator(BasePageUI.DYNAMIC_TEXTBOX),value);
+    @Step("Input to textbox has ID attribute: {1} with value: {2}")
+    public void inputToTextboxByIdAttribute(WebDriver driver, String idAttribute, String value){
+        waitElementVisible(driver, getDynamicLocator(BasePageUI.DYNAMIC_TEXTBOX_BY_ID, idAttribute));
+        sendKeyToElement(driver,getDynamicLocator(BasePageUI.DYNAMIC_TEXTBOX_BY_ID, idAttribute), value);
     }
 
-    protected long shortTimeout = GlobalConstants.SHORT_TIMEOUT;
+    @Step("Input to textbox has Name attribute: {1} with value: {2}")
+    public void inputToTextboxByNameAttribute(WebDriver driver, String nameAttribute, String value){
+        waitElementVisible(driver, getDynamicLocator(BasePageUI.DYNAMIC_TEXTBOX_BY_NAME, nameAttribute));
+        sendKeyToElement(driver,getDynamicLocator(BasePageUI.DYNAMIC_TEXTBOX_BY_NAME, nameAttribute), value);
+    }
+
+    @Step("Click to button has title: {1}")
+    public void clickToButtonByTitle(WebDriver driver, String buttonTitle){
+        waitElementVisible(driver, getDynamicLocator(BasePageUI.DYNAMIC_BUTTON_BY_TITLE, buttonTitle));
+        clickToElement(driver,getDynamicLocator(BasePageUI.DYNAMIC_BUTTON_BY_TITLE, buttonTitle));
+    }
+    @Step("Click to button has title: {1}")
+    public void clickToLinkByTitle(WebDriver driver, String linkTitle){
+        waitElementVisible(driver, getDynamicLocator(BasePageUI.DYNAMIC_LINK_BY_TITLE, linkTitle));
+        clickToElement(driver,getDynamicLocator(BasePageUI.DYNAMIC_LINK_BY_TITLE, linkTitle));
+    }
+
+    @Step("Click to link has value: {1}")
+    public void clickToLinkByValue(WebDriver driver, String linkValue){
+        waitElementVisible(driver, getDynamicLocator(BasePageUI.DYNAMIC_LINK_BY_TEXT, linkValue));
+        clickToElement(driver,getDynamicLocator(BasePageUI.DYNAMIC_LINK_BY_TEXT, linkValue));
+    }
+
+    protected long shortTimeout = GlobalConstants.getGlobalConstants().getShortTimeout();
     String osName = System.getProperty("os.name");
-    protected long longTimeout = GlobalConstants.LONG_TIMEOUT;
+    protected long longTimeout = GlobalConstants.getGlobalConstants().getLongTimeout();
     protected Actions action;
     protected Alert alert;
     protected WebElement element;

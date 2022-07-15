@@ -2,30 +2,48 @@
 
 package commons;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class GlobalConstants {
+    private static GlobalConstants globalConstants;
+
+    private GlobalConstants(){
+
+    }
+
+    public static synchronized GlobalConstants getGlobalConstants(){
+        if (globalConstants == null){
+            globalConstants = new GlobalConstants();
+        }
+        return globalConstants;
+    }
+
     //Wait Infor
-    public static final long LONG_TIMEOUT = 30;
-    public static final long SHORT_TIMEOUT = 5;
+    private final long longTimeout = 30;
+    private final long shortTimeout = 5;
 
     //System Infor
-    public static final String PROJECT_PATH = System.getProperty("user.dir");
-    public static final String OS_NAME = System.getProperty("os.name");
+    private final String projectPath = System.getProperty("user.dir");
+    private final String osName = System.getProperty("os.name");
 
     //App Infor User
-    public static final String LIVE_USER_URL = "http://live.techpanda.org/";
+    private final String liveUserUrl = "http://live.techpanda.org/";
 
-    public static final String USERNAME = "test2211@gmail.com";
-    public static final String PASSWORD = "123456";
+    private final String userName = "test2211@gmail.com";
+    private final String password = "123456";
 
     //App Infor Admin
-    public static final String LIVE_ADMIN_URL = "http://live.techpanda.org/index.php/backendlogin";
+    private final String liveAdminUrl = "http://live.techpanda.org/index.php/backendlogin";
 
-    public static final String ADMIN_USERNAME = "user01";
-    public static final String ADMIN_PASSWORD = "guru99.com";
+    private final String adminUserName = "user01";
+    private final String adminPassword = "guru99.com";
 
     //Download/ Upload
-    public static final String UPLOAD_PATH = PROJECT_PATH + "/uploadFiles/";
-    public static final String DOWNLOAD_PATH = PROJECT_PATH + "downloadFiles/";
+    private final String UPLOAD_PATH = projectPath + "/uploadFiles/";
+    private final String DOWNLOAD_PATH = projectPath + "downloadFiles/";
 
 
 }

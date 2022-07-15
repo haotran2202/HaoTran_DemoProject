@@ -14,8 +14,8 @@ public class CreateAnAccountPageObject extends BasePage {
 
     @Step("Input to {0} textbox with value: {1}")
     public void inputToDynamicTextbox(String id, String value){
-        waitElementVisible(driver, BasePageUI.DYNAMIC_TEXTBOX, id);
-        sendKeyToElement(driver, BasePageUI.DYNAMIC_TEXTBOX,value,id);
+        waitElementVisible(driver, BasePageUI.DYNAMIC_TEXTBOX_BY_ID, id);
+        sendKeyToElement(driver, BasePageUI.DYNAMIC_TEXTBOX_BY_ID,value,id);
     }
 
     @Step("Click to 'Register' button")

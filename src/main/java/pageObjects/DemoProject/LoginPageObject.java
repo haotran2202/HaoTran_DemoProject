@@ -19,12 +19,6 @@ public class LoginPageObject extends BasePage {
         return PageGeneratorManager.getCreateNewAccountPage(driver);
     }
 
-    @Step("Input to {0} textbox with value: {1}")
-    public void inputToDynamicTextbox(String id, String value){
-        waitElementVisible(driver, BasePageUI.DYNAMIC_TEXTBOX, id);
-        sendKeyToElement(driver, BasePageUI.DYNAMIC_TEXTBOX,value,id);
-    }
-
     @Step("Click to 'Login' button")
     public AccountDashboardPageObject clickToLoginButton() {
         waitElementVisible(driver, LoginPageUI.LOGIN_BUTTON);
