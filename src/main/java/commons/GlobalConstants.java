@@ -10,12 +10,12 @@ import lombok.Setter;
 public class GlobalConstants {
     private static GlobalConstants globalConstants;
 
-    private GlobalConstants(){
+    private GlobalConstants() {
 
     }
 
-    public static synchronized GlobalConstants getGlobalConstants(){
-        if (globalConstants == null){
+    public static synchronized GlobalConstants getGlobalConstants() {
+        if (globalConstants == null) {
             globalConstants = new GlobalConstants();
         }
         return globalConstants;

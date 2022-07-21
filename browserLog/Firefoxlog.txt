@@ -1,0 +1,55 @@
+1658258849349	geckodriver	INFO	Listening on 127.0.0.1:39116
+1658258853142	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/81/y5w4j2yx2b10d39gql5gnxpm0000gn/T/rust_mozprofileNNg7Sy"
+1658258853410	Marionette	INFO	Marionette enabled
+2022-07-20 02:27:33.413 plugin-container[88430:5214100] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-07-20 02:27:33.413 plugin-container[88430:5214100] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2022-07-20 02:27:33.415 plugin-container[88430:5214100] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-07-20 02:27:33.415 plugin-container[88430:5214100] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2022-07-20 02:27:33.415 plugin-container[88430:5214102] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-07-20 02:27:33.415 plugin-container[88430:5214102] nil host used in call to allowsAnyHTTPSCertificateForHost:
+1658258853425	Marionette	INFO	Listening on port 51888
+Read port: 51888
+1658258853564	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/81/y5w4j2yx2b10d39gql5gnxpm0000gn/T/rust_mozprofileNNg7Sy/search.json.mozlz4", (void 0)))
+UNSUPPORTED (log once): POSSIBLE ISSUE: unit 1 GLD_TEXTURE_INDEX_2D is unloadable and bound to sampler type (Float) - using zero texture because texture unloadable
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://live.techpanda.org"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://live.techpanda.org"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is nulcl
+oJavaScript error: resource://gre/nsole.warn: LoginmRodules/ecipes: "getRecipesLoginM: falling backanagerParent. to a syncjhsm, line 136: TypeError: gRecipeManager is null
+ronous message foJavaScrr:" "http://live.techpanda.org"
+ipt error: , line 0: uncaught exception: undefined
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://live.techpanda.org"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://live.techpanda.orJavaScript error: resource:g"
+//gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous meJssage for:" "http://live.techpanda.org"
+avaScript errconsole.waror: resource://gre/modules/LoginManagerParent.n: LoginRecijsm, line 1p36: TypeError: gRecipeManager is null
+JavaScript error: resource://gre/modules/Loes: "getRecipes: falling back to a synchronous message for:" "http://live.techpanda.org"
+console.warn: LoginRecipgeisn:Manager P"getRearent.jcipes: falling bacsm, lk to ia ne 136: Tsypynchronous message for:" e"Error: hgRecipeManager is null
+JavaScript error: trtp://live.techepanda.soourcre://gre/modulesg/LoginM"anager
+console.warn: LogPiarent.jsm, line 136: TypeError: gRecipeManager is null
+JavaScript error: resource://gre/modules/LoginManagerParent.jsnRecipes: "getRem, line 136cipes: falling back to a synchronous message for:" "h: TypeError: gRecipeManagttpe://live.techpanda.org"
+r is null
+console.warn: LoginRecipes: "getRecipJavaScript erreor: resource://gre/modus: falling les/Logiback to a synchronous message for:" "http://live.techpanda.org"
+nManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+console.warn: LoginRecipes: "getRecipes: falling baJavaScript error: resource://gre/modules/LoginManagerParent.jsm, linck to a synchronous message for:" e 136: TypeError: gReci"http://live.techppeManager is null
+anda.org"
+JavaScript error: console.warn: LoginRecipes: "gresourceetRecipes: falling back to a synchronous message for:" "http:://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeMa//live.technager is null
+JavaScript error: resource://gre/mopanda.org"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://live.techpanda.org"
+console.warn: LoginRecipes: "getRecdules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is nipes: falling back to a syncull
+JavaScrhronipt eous message for:" "http://live.techpanda.org"
+rror: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://liveJ.techpanda.oravaScriptg "
+error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+consolJe.waravnaScript er:r LoginRecipes: "getRor: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+ecipes: falling back to a synchronous message for:" "http://live.techpanda.org"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://live.techpanda.org"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager iconss nuole.ll
+warn: LoginRecipes: "getRecJavaScript error: resourcipese://: fagrelling back to a synchrono/moduus mles/LoginManaessage for:" "http://live.techpanda.org"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://live.techpanda.org"
+consolgeerParent.jsm.wa,rn: LoginRecipes: "g lietRecipes: falling banck to a e 136:s ynchroTnypeError: gRecipeManager is onuulsl
+ meJsavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+JavaScript error: resource://gresage for:" "http://li/modules/LoginManagerParent.jsm, lve.techpanda.org"
+ine 136: TypeError: gRecipeManager is null
+1658258868984	Marionette	INFO	Stopped listening on port 51888

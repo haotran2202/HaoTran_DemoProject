@@ -125,18 +125,18 @@ public abstract class BasePage {
     }
 
 
-    private By getByLocator(String locatorType){
+    private By getByLocator(String locatorType) {
         By by = null;
 //        System.out.println("Locator type =" + locatorType);
-        if (locatorType.startsWith("id=")||locatorType.startsWith("Id=")||locatorType.startsWith("ID=")){
+        if (locatorType.startsWith("id=") || locatorType.startsWith("Id=") || locatorType.startsWith("ID=")) {
             by = By.id(locatorType.substring(3));
-        } else if (locatorType.startsWith("class=")||locatorType.startsWith("Class=")||locatorType.startsWith("CLASS=")){
+        } else if (locatorType.startsWith("class=") || locatorType.startsWith("Class=") || locatorType.startsWith("CLASS=")) {
             by = By.className(locatorType.substring(6));
-        } else if (locatorType.startsWith("name=")||locatorType.startsWith("Name=")||locatorType.startsWith("NAME=")){
+        } else if (locatorType.startsWith("name=") || locatorType.startsWith("Name=") || locatorType.startsWith("NAME=")) {
             by = By.name(locatorType.substring(5));
-        } else if (locatorType.startsWith("css=")||locatorType.startsWith("Css=")||locatorType.startsWith("CSS=")){
+        } else if (locatorType.startsWith("css=") || locatorType.startsWith("Css=") || locatorType.startsWith("CSS=")) {
             by = By.cssSelector(locatorType.substring(4));
-        } else if (locatorType.startsWith("//")){
+        } else if (locatorType.startsWith("//")) {
             by = By.xpath(locatorType);
         } else {
             throw new RuntimeException("Locator type is not supported");
@@ -144,22 +144,21 @@ public abstract class BasePage {
         return by;
     }
 
-    private WebElement getWebElement(WebDriver driver, String locatorType){
+    private WebElement getWebElement(WebDriver driver, String locatorType) {
         return driver.findElement(getByLocator(locatorType));
     }
 
-    private List<WebElement> getListElement(WebDriver driver, String locatorType){
+    private List<WebElement> getListElement(WebDriver driver, String locatorType) {
         return driver.findElements(getByLocator(locatorType));
     }
 
-    protected List<WebElement> finds(WebDriver driver, String xpathValue){
+    protected List<WebElement> finds(WebDriver driver, String xpathValue) {
         return driver.findElements(byXpath(xpathValue));
     }
 
 
-
     protected void sendKeyToElement(WebDriver driver, String locatorType, String value) {
-        element = getWebElement(driver,locatorType);
+        element = getWebElement(driver, locatorType);
         element.clear();
         element.sendKeys(value);
     }
@@ -191,7 +190,7 @@ public abstract class BasePage {
         explicitWait = new WebDriverWait(driver, longTimeout);
         explicitWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(byXpath(childItemLocator)));
 
-        elements  = getListElement(driver, childItemLocator);
+        elements = getListElement(driver, childItemLocator);
         for (WebElement item : elements) {
             if (item.getText().equals(expectedItem)) {
                 jsExecutor = (JavascriptExecutor) driver;
@@ -212,11 +211,11 @@ public abstract class BasePage {
         }
     }
 
-    protected String getElementAttribute(WebDriver driver, String locatorType, String attributeName){
+    protected String getElementAttribute(WebDriver driver, String locatorType, String attributeName) {
         return getWebElement(driver, locatorType).getAttribute(attributeName);
     }
 
-    protected String getElementText(WebDriver driver, String locator){
+    protected String getElementText(WebDriver driver, String locator) {
         return getWebElement(driver, locator).getText();
     }
 
@@ -226,14 +225,14 @@ public abstract class BasePage {
 
     protected void checkToCheckBox(WebDriver driver, String locator) {
         element = getWebElement(driver, locator);
-        if(!element.isSelected()) {
+        if (!element.isSelected()) {
             element.click();
         }
     }
 
     protected void uncheckToCheckBox(WebDriver driver, String locator) {
         element = getWebElement(driver, locator);
-        if(element.isSelected()) {
+        if (element.isSelected()) {
             element.click();
         }
     }
@@ -259,7 +258,7 @@ public abstract class BasePage {
         action.moveToElement(getWebElement(driver, locator)).perform();
     }
 
-    protected void sendKeyBoardToElement(WebDriver driver, String locator,  Keys key) {
+    protected void sendKeyBoardToElement(WebDriver driver, String locator, Keys key) {
         action = new Actions(driver);
         action.sendKeys(getWebElement(driver, locator), key);
     }
@@ -307,7 +306,7 @@ public abstract class BasePage {
         explicitWait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(byXpath(xpathValue)));
     }
 
-    protected void waitAllElementVisible(WebDriver driver, String xpathValue, String...values) {
+    protected void waitAllElementVisible(WebDriver driver, String xpathValue, String... values) {
         explicitWait = new WebDriverWait(driver, longTimeout);
         explicitWait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(byXpath(getDynamicLocator(xpathValue, values))));
     }
@@ -378,7 +377,7 @@ public abstract class BasePage {
     protected boolean isElementDisplayed(WebDriver driver, WebElement element) {
         try {
             return element.isDisplayed();
-        } catch (Exception e){
+        } catch (Exception e) {
             log.debug("Element is not displayed with error: " + e.getMessage());
             return false;
         }
@@ -406,9 +405,9 @@ public abstract class BasePage {
 
     protected void waitElementVisible(WebDriver driver, String xpathValue, String... values) {
         try {
-        explicitWait = new WebDriverWait(driver, longTimeout);
-        explicitWait
-                .until(ExpectedConditions.visibilityOfElementLocated(byXpath(getDynamicLocator(xpathValue, values))));
+            explicitWait = new WebDriverWait(driver, longTimeout);
+            explicitWait
+                    .until(ExpectedConditions.visibilityOfElementLocated(byXpath(getDynamicLocator(xpathValue, values))));
         } catch (Exception e) {
             log.debug("Wait for element visible with error: " + e.getMessage());
         }
@@ -417,7 +416,7 @@ public abstract class BasePage {
     protected boolean isElementDisplayed(WebDriver driver, String xpathValue, String... values) {
         try {
             return find(driver, getDynamicLocator(xpathValue, values)).isDisplayed();
-        } catch (Exception e){
+        } catch (Exception e) {
             log.debug("Element is not displayed with error: " + e.getMessage());
             return false;
         }
@@ -429,14 +428,13 @@ public abstract class BasePage {
         } catch (NoSuchElementException ex) {
             log.debug("Element is not displayed with error: " + ex.getMessage());
             return false;
-        }
-        catch (StaleElementReferenceException ex) {
+        } catch (StaleElementReferenceException ex) {
             log.debug("Element is not displayed with error: " + ex.getMessage());
             return false;
         }
     }
 
-    protected void overrideImplicitTimeOut(WebDriver driver, long timeInSecond){
+    protected void overrideImplicitTimeOut(WebDriver driver, long timeInSecond) {
         driver.manage().timeouts().implicitlyWait(timeInSecond, TimeUnit.SECONDS);
     }
 
@@ -444,7 +442,7 @@ public abstract class BasePage {
         overrideImplicitTimeOut(driver, shortTimeout);
         elements = getListElement(driver, locator);
         overrideImplicitTimeOut(driver, longTimeout);
-        if (elements.size()==0) {
+        if (elements.size() == 0) {
             return true;
         } else if (elements.size() > 0 && !elements.get(0).isDisplayed()) {
             return true;
@@ -453,11 +451,11 @@ public abstract class BasePage {
         }
     }
 
-    protected boolean isControlUndisplayed(WebDriver driver, String locator, String...values) {
+    protected boolean isControlUndisplayed(WebDriver driver, String locator, String... values) {
         overrideImplicitTimeOut(driver, shortTimeout);
         elements = finds(driver, getDynamicLocator(locator, values));
         overrideImplicitTimeOut(driver, longTimeout);
-        if (elements.size()==0) {
+        if (elements.size() == 0) {
             return true;
         } else if (elements.size() > 0 && !elements.get(0).isDisplayed()) {
             return true;
@@ -572,7 +570,7 @@ public abstract class BasePage {
         ArrayList<Float> arrayList = new ArrayList<Float>();
         List<WebElement> elementList = getListElement(driver, locator);
         for (WebElement element : elementList) {
-            arrayList.add(Float.parseFloat(element.getText().replace("$","").trim()));
+            arrayList.add(Float.parseFloat(element.getText().replace("$", "").trim()));
         }
         System.out.println("---The data on UI---");
         for (Float name : arrayList) {
@@ -624,7 +622,7 @@ public abstract class BasePage {
     public BasePage openDynamicTab(WebDriver driver, String tabName) {
         waitAllElementVisible(driver, BasePageUI.DYNAMIC_TAB, tabName);
         clickToElement(driver, BasePageUI.DYNAMIC_TAB, tabName);
-        switch (tabName){
+        switch (tabName) {
             case "Mobile":
                 return PageGeneratorManager.getMobilePage(driver);
             case "TV":
@@ -638,7 +636,7 @@ public abstract class BasePage {
     public BasePage openDynamicAccountPage(WebDriver driver, String pageName) {
         waitAllElementVisible(driver, BasePageUI.DYNAMIC_ACCOUNT_PAGE_BY_TEXT, pageName);
         clickToElement(driver, BasePageUI.DYNAMIC_ACCOUNT_PAGE_BY_TEXT, pageName);
-        switch (pageName){
+        switch (pageName) {
             case "Mobile":
                 return PageGeneratorManager.getMobilePage(driver);
             case "TV":
@@ -649,32 +647,33 @@ public abstract class BasePage {
     }
 
     @Step("Input to textbox has ID attribute: {1} with value: {2}")
-    public void inputToTextboxByIdAttribute(WebDriver driver, String idAttribute, String value){
+    public void inputToTextboxByIdAttribute(WebDriver driver, String idAttribute, String value) {
         waitElementVisible(driver, getDynamicLocator(BasePageUI.DYNAMIC_TEXTBOX_BY_ID, idAttribute));
-        sendKeyToElement(driver,getDynamicLocator(BasePageUI.DYNAMIC_TEXTBOX_BY_ID, idAttribute), value);
+        sendKeyToElement(driver, getDynamicLocator(BasePageUI.DYNAMIC_TEXTBOX_BY_ID, idAttribute), value);
     }
 
     @Step("Input to textbox has Name attribute: {1} with value: {2}")
-    public void inputToTextboxByNameAttribute(WebDriver driver, String nameAttribute, String value){
+    public void inputToTextboxByNameAttribute(WebDriver driver, String nameAttribute, String value) {
         waitElementVisible(driver, getDynamicLocator(BasePageUI.DYNAMIC_TEXTBOX_BY_NAME, nameAttribute));
-        sendKeyToElement(driver,getDynamicLocator(BasePageUI.DYNAMIC_TEXTBOX_BY_NAME, nameAttribute), value);
+        sendKeyToElement(driver, getDynamicLocator(BasePageUI.DYNAMIC_TEXTBOX_BY_NAME, nameAttribute), value);
     }
 
     @Step("Click to button has title: {1}")
-    public void clickToButtonByTitle(WebDriver driver, String buttonTitle){
+    public void clickToButtonByTitle(WebDriver driver, String buttonTitle) {
         waitElementVisible(driver, getDynamicLocator(BasePageUI.DYNAMIC_BUTTON_BY_TITLE, buttonTitle));
-        clickToElement(driver,getDynamicLocator(BasePageUI.DYNAMIC_BUTTON_BY_TITLE, buttonTitle));
+        clickToElement(driver, getDynamicLocator(BasePageUI.DYNAMIC_BUTTON_BY_TITLE, buttonTitle));
     }
+
     @Step("Click to button has title: {1}")
-    public void clickToLinkByTitle(WebDriver driver, String linkTitle){
+    public void clickToLinkByTitle(WebDriver driver, String linkTitle) {
         waitElementVisible(driver, getDynamicLocator(BasePageUI.DYNAMIC_LINK_BY_TITLE, linkTitle));
-        clickToElement(driver,getDynamicLocator(BasePageUI.DYNAMIC_LINK_BY_TITLE, linkTitle));
+        clickToElement(driver, getDynamicLocator(BasePageUI.DYNAMIC_LINK_BY_TITLE, linkTitle));
     }
 
     @Step("Click to link has value: {1}")
-    public void clickToLinkByValue(WebDriver driver, String linkValue){
+    public void clickToLinkByValue(WebDriver driver, String linkValue) {
         waitElementVisible(driver, getDynamicLocator(BasePageUI.DYNAMIC_LINK_BY_TEXT, linkValue));
-        clickToElement(driver,getDynamicLocator(BasePageUI.DYNAMIC_LINK_BY_TEXT, linkValue));
+        clickToElement(driver, getDynamicLocator(BasePageUI.DYNAMIC_LINK_BY_TEXT, linkValue));
     }
 
     protected long shortTimeout = GlobalConstants.getGlobalConstants().getShortTimeout();

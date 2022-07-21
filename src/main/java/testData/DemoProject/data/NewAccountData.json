@@ -1,0 +1,9 @@
+{
+"Register":{
+  "firstname": "Test",
+  "middlename": "Test",
+  "lastname": "Test",
+  "email": "testing002",
+  "password": "a123456"
+  }
+}

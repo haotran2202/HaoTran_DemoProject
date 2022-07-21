@@ -7,8 +7,9 @@ import pageUIs.DemoProject.HomePageUI;
 
 public class HomePageObject extends BasePage {
     WebDriver driver;
-    public HomePageObject(WebDriver driver){
-        this.driver=driver;
+
+    public HomePageObject(WebDriver driver) {
+        this.driver = driver;
     }
 
     @Step("Click to 'My Account' link")

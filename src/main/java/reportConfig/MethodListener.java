@@ -1,4 +1,4 @@
-package commons;
+package reportConfig;
 
 import java.util.List;
 

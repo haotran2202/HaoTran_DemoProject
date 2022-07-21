@@ -8,8 +8,9 @@ import pageUIs.DemoProject.MobilePageUI;
 
 public class MobilePageObject extends BasePage {
     WebDriver driver;
-    public MobilePageObject(WebDriver driver){
-        this.driver=driver;
+
+    public MobilePageObject(WebDriver driver) {
+        this.driver = driver;
     }
 
     @Step("Click to 'Add To Cart' button of Iphone")

@@ -1,4 +1,4 @@
-package commons;
+package reportConfig;
 
 import org.apache.log4j.AppenderSkeleton;
 import org.apache.log4j.spi.LoggingEvent;
@@ -26,6 +26,7 @@ public class TestNGAppender extends AppenderSkeleton {
 
     /**
      * Insert log message into ReportNG
+     *
      * @param logMessage
      */
     public void info(String logMessage) {

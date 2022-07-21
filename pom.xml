@@ -27,6 +27,7 @@
         <webdrivermanager.version>4.4.3</webdrivermanager.version>
         <aspectj.version>1.8.10</aspectj.version>
         <lombok.version>1.18.24</lombok.version>
+        <owner.version>1.0.12</owner.version>
     </properties>
 
     <!-- Quản lí thư viện -->
@@ -134,6 +135,12 @@
             <artifactId>lombok</artifactId>
             <version>${lombok.version}</version>
             <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.aeonbits.owner</groupId>
+            <artifactId>owner</artifactId>
+            <version>${owner.version}</version>
         </dependency>
 
     </dependencies>

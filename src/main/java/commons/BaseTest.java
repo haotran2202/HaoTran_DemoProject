@@ -2,6 +2,8 @@ package commons;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Collections;
+import java.util.List;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
@@ -12,13 +14,18 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.logging.LogEntries;
+import org.openqa.selenium.logging.LogEntry;
+import org.openqa.selenium.opera.OperaDriver;
+import org.openqa.selenium.safari.SafariDriver;
 import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.BeforeTest;
+import reportConfig.VerificationFailures;
 
 public abstract class BaseTest {
     protected static ThreadLocal<WebDriver> threadLocalDriver = new ThreadLocal<WebDriver>();
@@ -34,27 +41,46 @@ public abstract class BaseTest {
 
         if (browser == Browser.CHROME) {
             WebDriverManager.chromedriver().setup();
-            setDriver(new ChromeDriver());
-        } else if (browser == Browser.CHROME_HEADLESS) {
+            ChromeOptions options = new ChromeOptions();
+//            options.setExperimentalOption("useAutomationExtention", false);
+//            options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
+//            options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
+//            options.addArguments("--lang=en");
+//            options.addArguments("--disable-infobars");
+//            options.addArguments("--disable-notifications");
+//            options.addArguments("--disable-geolocation");
+//            options.addArguments("--incognito");
+            setDriver(new ChromeDriver(options));
+        } else if (browser == Browser.H_CHROME) {
             WebDriverManager.chromedriver().setup();
             ChromeOptions options = new ChromeOptions();
-            options.addArguments("headless");
+            options.addArguments("--lang=en");
+            options.addArguments("--headless");
             options.addArguments("window-size=1920x1080");
             setDriver(new ChromeDriver(options));
-        }
-        else if (browser == Browser.FIREFOX) {
+        } else if (browser == Browser.FIREFOX) {
             WebDriverManager.firefoxdriver().setup();
+            System.setProperty(FirefoxDriver.SystemProperty.DRIVER_USE_MARIONETTE, "true");
+            System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, GlobalConstants.getGlobalConstants().getProjectPath() + File.separator + "browserLog" + File.separator + "Firefoxlog.log");
             setDriver(new FirefoxDriver());
-        }
-        else if (browser == Browser.EDGE) {
+        } else if (browser == Browser.H_FIREFOX) {
+            WebDriverManager.firefoxdriver().setup();
+            FirefoxOptions options = new FirefoxOptions();
+            options.addArguments("--headless");
+            options.addArguments("window-size=1920x1080");
+            setDriver(new FirefoxDriver(options));
+        } else if (browser == Browser.EDGE) {
             WebDriverManager.edgedriver().setup();
             setDriver(new EdgeDriver());
-        }
-        else if (browser == Browser.IE) {
+        } else if (browser == Browser.OPERA) {
+            WebDriverManager.operadriver().setup();
+            setDriver(new OperaDriver());
+        } else if (browser == Browser.IE) {
             WebDriverManager.iedriver().arch32().setup();
             setDriver(new InternetExplorerDriver());
-        }
-        else {
+        } else if (browser == Browser.SAFARI) {
+            setDriver(new SafariDriver());
+        } else {
             throw new RuntimeException("Please input your browser name!");
         }
         getDriver().manage().timeouts().implicitlyWait(GlobalConstants.getGlobalConstants().getLongTimeout(), TimeUnit.SECONDS);
@@ -150,6 +176,16 @@ public abstract class BaseTest {
             System.out.print(e.getMessage());
         }
         log.info("---------- END delete file in folder ----------");
+    }
+
+    protected void showBrowserConsoleLogs(WebDriver driver) {
+        if (driver.toString().contains("chrome")) {
+            LogEntries logs = driver.manage().logs().get("browser");
+            List<LogEntry> LogList = logs.getAll();
+            for (LogEntry logging : LogList) {
+                log.info("----------" + logging.getLevel().toString() + "----------\n" + logging.getMessage());
+            }
+        }
     }
 
     private boolean checkTrue(boolean condition) {

@@ -8,8 +8,9 @@ import pageUIs.DemoProject.ShoppingCartPageUI;
 
 public class ShoppingCartPageObject extends BasePage {
     WebDriver driver;
-    public ShoppingCartPageObject(WebDriver driver){
-        this.driver=driver;
+
+    public ShoppingCartPageObject(WebDriver driver) {
+        this.driver = driver;
     }
 
     @Step("Click to 'Continue Shopping' link")
@@ -41,7 +42,7 @@ public class ShoppingCartPageObject extends BasePage {
     }
 
     @Step("Get text of No item message")
-    public String getTextNoItemMessage(){
+    public String getTextNoItemMessage() {
         waitAllElementVisible(driver, ShoppingCartPageUI.NO_ITEM_MESSAGE);
         return getElementText(driver, ShoppingCartPageUI.NO_ITEM_MESSAGE);
     }
